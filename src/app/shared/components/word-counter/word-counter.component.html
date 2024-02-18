@@ -1,0 +1,9 @@
+<div class="word-counter" *ngIf="content">
+  <h3>Word Count:</h3>
+  <p>Total Words: {{ wordCount }}</p>
+  <ul>
+    <li *ngFor="let word of uniqueWords">
+      {{ word }}: {{ wordFrequencies[word] }}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,17 @@
+<div class="file-loader-container">
+  <label for="fileInput" class="file-input">Choose a .txt file:</label>
+  <input
+    id="fileInput"
+    type="file"
+    (change)="onFileSelected($event)"
+    accept=".txt"
+  />
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <div *ngIf="fileContent" class="file-content">
+    <h2>File Content</h2>
+    <pre>{{ fileContent.content }}</pre>
+    <app-word-counter [content]="fileContent.content"></app-word-counter>
+  </div>
+</div>
